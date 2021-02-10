@@ -1,0 +1,261 @@
+{
+  "root": true,
+  "plugins": ["@nrwl/nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "extends": ["plugin:editorconfig/noconflict"],
+      "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+      },
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "plugins": ["editorconfig"]
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "plugins": ["@typescript-eslint"],
+      "parserOptions": {
+        "project": "./tsconfig.*?.json"
+      },
+      "rules": {
+        "indent": ["error", "tab", {"SwitchCase": 1}],
+        "semi": ["error", "always"],
+        "no-extra-semi": "error",
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "@typescript-eslint/consistent-type-definitions": "error",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "off",
+          {
+            "accessibility": "explicit"
+          }
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "error",
+          {
+            "multiline": {
+              "delimiter": "semi",
+              "requireLast": true
+            },
+            "singleline": {
+              "delimiter": "semi",
+              "requireLast": false
+            }
+          }
+        ],
+        "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-inferrable-types": "error",
+        "@typescript-eslint/no-misused-new": "error",
+        "@typescript-eslint/no-non-null-assertion": "error",
+        "@typescript-eslint/no-shadow": [
+          "warn",
+          {
+            "hoist": "all",
+            "ignoreTypeValueShadow": true
+          }
+        ],
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "ignoreRestSiblings": true,
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/prefer-function-type": "error",
+        "@typescript-eslint/quotes": ["error", "double"],
+        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/unified-signatures": "error",
+        "arrow-body-style": "error",
+        "brace-style": [
+          "error",
+          "allman",
+          {
+            "allowSingleLine": false
+          }
+        ],
+        "camelcase": "off",
+        "comma-dangle": "off",
+        "constructor-super": "error",
+        "curly": ["error", "multi-or-nest", "consistent"],
+        "dot-notation": "off",
+        "eqeqeq": ["error", "smart"],
+        "guard-for-in": "error",
+        "id-blacklist": "off",
+        "id-match": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 2000
+          }
+        ],
+        "no-bitwise": "error",
+        "no-caller": "error",
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "log",
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "no-debugger": "error",
+        "no-empty": "off",
+        "no-eval": "error",
+        "no-fallthrough": "error",
+        "no-multiple-empty-lines": "error",
+        "no-new-wrappers": "error",
+        "no-null/no-null": "off",
+        "no-restricted-imports": ["error", "rxjs/Rx"],
+        "no-shadow": "off",
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "error",
+        "no-unused-vars": "off",
+        "no-var": "error",
+        "nonblock-statement-body-position": ["error", "below"],
+        "prefer-const": "error",
+        "quotes": [2, "double", "avoid-escape"],
+        "radix": "error",
+        "space-before-function-paren": "off"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {
+        "indent": ["error", "tab", {"SwitchCase": 1}],
+        "semi": ["error", "always"],
+        "no-extra-semi": "error",
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "arrow-body-style": "error",
+        "brace-style": [
+          "error",
+          "allman",
+          {
+            "allowSingleLine": false
+          }
+        ],
+        "camelcase": "off",
+        "comma-dangle": "off",
+        "constructor-super": "error",
+        "curly": ["error", "multi-or-nest", "consistent"],
+        "dot-notation": "off",
+        "eqeqeq": ["error", "smart"],
+        "guard-for-in": "error",
+        "id-blacklist": "off",
+        "id-match": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 2000
+          }
+        ],
+        "no-bitwise": "error",
+        "no-caller": "error",
+        "no-console": [
+          "error",
+          {
+            "allow": [
+              "log",
+              "warn",
+              "dir",
+              "timeLog",
+              "assert",
+              "clear",
+              "count",
+              "countReset",
+              "group",
+              "groupEnd",
+              "table",
+              "dirxml",
+              "error",
+              "groupCollapsed",
+              "Console",
+              "profile",
+              "profileEnd",
+              "timeStamp",
+              "context"
+            ]
+          }
+        ],
+        "no-debugger": "error",
+        "no-empty": "off",
+        "no-eval": "error",
+        "no-fallthrough": "error",
+        "no-multiple-empty-lines": ["error", {"max":1, "maxEOF":0}],
+        "no-new-wrappers": "error",
+        "no-null/no-null": "off",
+        "no-restricted-imports": ["error", "rxjs/Rx"],
+        "no-shadow": "off",
+        "no-throw-literal": "error",
+        "no-undef-init": "error",
+        "no-underscore-dangle": "off",
+        "no-unused-expressions": "error",
+        "no-unused-vars": [
+          "warn",
+          {
+            "ignoreRestSiblings": true,
+            "argsIgnorePattern": "^_"
+          }
+        ],
+        "no-var": "error",
+        "nonblock-statement-body-position": ["error", "below"],
+        "prefer-const": "error",
+        "quotes": [2, "double", "avoid-escape"],
+        "radix": "error",
+        "space-before-function-paren": "off"
+      }
+    }
+  ]
+}
